@@ -1,11 +1,10 @@
 import 'package:get/get.dart';
 
-// import '../../config.dart';
-// import '../../presentation/screens.dart';
-// import 'bindings/controllers/controllers_bindings.dart';
 import '../../module/home/home.screen.dart';
+import '../../module/login/login.screen.dart';
 import 'bindings/controllers/home.controller.binding.dart';
 import 'routes.dart';
+import 'bindings/controllers/login.controller.binding.dart';
 
 // class EnvironmentsBadge extends StatelessWidget {
 //   final Widget child;
@@ -41,11 +40,11 @@ class Nav {
     //   page: () => SettingsScreen(),
     //   binding: SettingsControllerBinding(),
     // ),
-    // GetPage(
-    //   name: Routes.LOGIN,
-    //   page: () => LoginScreen(),
-    //   binding: LoginControllerBinding(),
-    // ),
+    GetPage(
+      name: Routes.LOGIN,
+      page: () => const LoginScreen(),
+      binding: LoginControllerBinding(),
+    ),
     // GetPage(
     //   name: Routes.REGISTER,
     //   page: () => RegisterScreen(),
