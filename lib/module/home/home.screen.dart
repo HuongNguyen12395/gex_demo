@@ -36,7 +36,7 @@ class HomeScreen extends GetView<HomeController> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              'welcome'.tr,
+              'login'.tr,
               style: const TextStyle(fontSize: 20),
             ),
             Row(
@@ -44,21 +44,15 @@ class HomeScreen extends GetView<HomeController> {
               children: [
                 ElevatedButton(
                   onPressed: () {
-                    Get.updateLocale(const Locale('en', 'EN'));
+                    Get.updateLocale(const Locale('en', 'US'));
                   },
                   child: const Text("English"),
                 ),
                 ElevatedButton(
                   onPressed: () {
-                    Get.updateLocale(const Locale('hi', 'HI'));
+                    Get.updateLocale(const Locale('vi', 'VN'));
                   },
-                  child: const Text("Hindi"),
-                ),
-                ElevatedButton(
-                  onPressed: () {
-                    Get.updateLocale(const Locale('bn', 'BN'));
-                  },
-                  child: const Text("Bengali"),
+                  child: const Text("Tiếng Việt"),
                 ),
               ],
             ),

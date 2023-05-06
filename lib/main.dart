@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:getx_demo/shared/navigation/navigation.dart';
+import 'generated/locales.g.dart';
 import 'shared/navigation/routes.dart';
 
 void main() async {
@@ -22,8 +23,8 @@ class Main extends StatelessWidget {
       // theme: AppThemes.light,
       // darkTheme: AppThemes.dark,
       themeMode: ThemeMode.system,
-      // translationsKeys: AppTranslation.translations,
-      // locale: const Locale('en', 'EN'),
+      translationsKeys: AppTranslation.translations,
+      locale: const Locale('en', 'US'),
     );
   }
 }
