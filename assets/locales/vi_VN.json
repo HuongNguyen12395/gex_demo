@@ -1,23 +1,23 @@
 {
-    "welcome": "Welcome",
+    "welcome": "Xin chào",
     "field": {
-        "username" : "Username / Email",
-        "password" : "Password",
-        "fullname": "Full name",
-        "email": "Email Address"
+        "username" : "Tài khoản / Email",
+        "password" : "Mật khẩu",
+        "fullname": "Họ và tên",
+        "email": "Địa chỉ email"
     },
     "screen": {
-        "login": "Login Screen",
-        "home": "Home Screen",
-        "register": "Register Screen",
-        "forget": "Password Recovery Screen"
+        "login": "Đăng nhập",
+        "home": "Trang chủ",
+        "register": "Đăng ký",
+        "forget": "Quên mật khẩu"
     },
     "button":{
-        "login":"Login",
-        "register": "Register",
+        "login":"Đăng nhập",
+        "register": "Đăng ký",
         "click": "Click",
         "change_color": "Change Color",
-        "forget_password": "Forget Password?",
+        "forget_password": "Quên mật khẩu?",
         "reset_password": "Reset Password",
         "logout": "Logout"
     }

@@ -25,7 +25,7 @@ class Main extends StatelessWidget {
       darkTheme: AppThemes.dark,
       themeMode: ThemeMode.system,
       translationsKeys: AppTranslation.translations,
-      locale: const Locale('en', 'US'),
+      locale: const Locale('vi', 'VN'),
     );
   }
 }

@@ -36,7 +36,7 @@ class HomeScreen extends GetView<HomeController> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              'login'.tr,
+              'welcome'.tr,
               style: const TextStyle(fontSize: 20),
             ),
             Row(
