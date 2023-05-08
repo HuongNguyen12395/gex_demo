@@ -11,4 +11,6 @@ class HomeController extends GetxController {
   void changeSwitch(bool themeMode) {
     isLight.value = themeMode;
   }
+
+  void login() {}
 }
