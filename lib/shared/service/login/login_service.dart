@@ -14,36 +14,30 @@ class LoginService {
     try {
       QueryResult result = await client.mutate(
         MutationOptions(
-          fetchPolicy: FetchPolicy.noCache,
-          document: gql(
-            """
-              mutation Mutation(\$email: Email, \$password: Password) {
-                login_bufalo_app(Email: \$id, Password: \$password) {
-                  email
-                  token
-                  user_id
+            fetchPolicy: FetchPolicy.noCache,
+            document: gql(
+              """
+                mutation MyMutation {
+                  login_bufalo_app(email: "cuongln.hust@gmail.com", password: "123456") {
+                    email
+                    token
+                    user_id
+                  }
                 }
-              }
             """,
-          ),
-          variables: {
-            "email": username,
-            "password": password,
-          },
-        ),
+            )),
       );
 
       if (result.hasException) {
         throw Exception(result.exception);
       } else {
-        List? res = result.data?['login_bufalo_app'];
+        var res = result.data?['login_bufalo_app'];
 
         if (res == null || res.isEmpty) {
-          return [];
+          return {};
         }
 
-        List<LoginModel> feelings =
-            res.map((feeling) => LoginModel.fromMap(map: feeling)).toList();
+        LoginModel feelings = LoginModel.fromMap(map: res);
 
         return feelings;
       }

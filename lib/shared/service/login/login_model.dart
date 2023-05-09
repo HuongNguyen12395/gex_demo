@@ -1,5 +1,5 @@
 class LoginModel {
-  final String userId;
+  final num userId;
   final String email;
   final String token;
 

@@ -2,22 +2,10 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
-import '../../shared/service/login/login_model.dart';
-import '../../shared/service/login/login_service.dart';
 import 'controllers/login.controller.dart';
 
 class LoginScreen extends GetView<LoginController> {
-  final LoginService _loginService = LoginService();
-  List<LoginModel>? _dataLogin;
-
-  LoginScreen({super.key});
-
-  void _load() async {
-    final books = await _loginService.login(
-        username: 'cuongln.hust@gmail.com', password: '123456');
-
-    print(books);
-  }
+  const LoginScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -73,7 +61,8 @@ class LoginScreen extends GetView<LoginController> {
                 Expanded(
                   child: ElevatedButton(
                     onPressed: () {
-                      _load();
+                      controller.login();
+                      controller.increment();
                     },
                     child: Text('button_login'.tr),
                   ),
@@ -85,9 +74,12 @@ class LoginScreen extends GetView<LoginController> {
                     },
                     child: Text('button_register'.tr),
                   ),
-                )
+                ),
               ],
-            )
+            ),
+            controller.count > 1
+                ? Text('Counter: ${controller.dataLogin!.email.toString()}')
+                : const Text('not data'),
           ],
         )),
       ),
