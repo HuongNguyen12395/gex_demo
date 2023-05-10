@@ -5,8 +5,9 @@ import 'package:get/get.dart';
 import 'controllers/login.controller.dart';
 
 class LoginScreen extends GetView<LoginController> {
-  const LoginScreen({super.key});
-
+  LoginScreen({super.key});
+  final userController = TextEditingController();
+  final passWordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,6 +28,7 @@ class LoginScreen extends GetView<LoginController> {
               height: 10,
             ),
             TextFormField(
+              controller: userController,
               decoration: InputDecoration(
                 border: const OutlineInputBorder(),
                 prefixIcon: const Icon(Icons.person),
@@ -38,6 +40,7 @@ class LoginScreen extends GetView<LoginController> {
               height: 18,
             ),
             TextFormField(
+              controller: passWordController,
               obscureText: true,
               decoration: InputDecoration(
                 border: const OutlineInputBorder(),
@@ -61,8 +64,8 @@ class LoginScreen extends GetView<LoginController> {
                 Expanded(
                   child: ElevatedButton(
                     onPressed: () {
-                      controller.login();
-                      controller.increment();
+                      controller.login(
+                          userController.text, passWordController.text);
                     },
                     child: Text('button_login'.tr),
                   ),

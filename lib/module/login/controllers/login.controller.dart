@@ -16,11 +16,17 @@ class LoginController extends GetxController {
     update();
   }
 
-  void login() async {
-    print('vào đây');
-    dataLogin = await _loginService.login(
-        username: 'cuongln.hust@gmail.com', password: '123456');
-    update();
-    print(dataLogin!.email);
+  void login(String username, String password) async {
+    try {
+      var response =
+          await _loginService.login(username: username, password: password);
+      if (response == null) {
+        return;
+      }
+      dataLogin = response;
+      Get.toNamed('/home');
+    } catch (e) {
+      print(e);
+    }
   }
 }

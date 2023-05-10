@@ -18,7 +18,7 @@ class LoginService {
             document: gql(
               """
                 mutation MyMutation {
-                  login_bufalo_app(email: "cuongln.hust@gmail.com", password: "123456") {
+                  login_bufalo_app(email: "$username", password: "$password") {
                     email
                     token
                     user_id
